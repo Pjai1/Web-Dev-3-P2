@@ -3,17 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\CarouselImageRepository;
 
 class HomeController extends Controller
 {
+    private $carousel;
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(CarouselImageRepository $carousel)
     {
-        $this->middleware('auth');
+        $this->carousel = $carousel;
     }
 
     /**
@@ -23,6 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $carousel = $this->carousel->getAll();
+
+        return view('home', [
+            'carousel' => $carousel
+        ]);
     }
 }

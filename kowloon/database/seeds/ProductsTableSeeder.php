@@ -12,6 +12,7 @@ class ProductsTableSeeder extends Seeder
     public function run()
     {
         DB::table('products')->insert([
+            'category_id' => 1,
             'name' => 'Koelmat',
             'price' => 15.49,
             'description' => 'Hondenkoelmat',

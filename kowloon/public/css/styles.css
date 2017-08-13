@@ -2,8 +2,32 @@
 @font-face{font-family:choplin;src:url(/fonts/Choplin-Medium.otf)}
 @font-face{font-family:choplin-light;src:url(/fonts/Choplin-ExtraLight.otf)}
 
+body {
+        background-color: #454545;
+    color: #cecece;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 175%;
+    width: 100%;
+}
+
+ol {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
 .cookie-title, h1 {
     font-family: Choplin !important;
+}
+
+.content {
+        margin-left: 5%;
+    width: 95%;
+}
+
+.content p {
+    color: red;
 }
 
 /* Navigation */
@@ -195,3 +219,22 @@
     padding: 10px 0;
     margin-top: 5%;
 }
+
+/* Carousel */
+.carousel-logo {
+    position: absolute;
+    width: 20%;
+    top: 75px;
+    left: 42.5%;
+    text-align: center;
+    z-index: 1;
+}
+
+.carousel {
+    margin-left: 5%;
+}
+
+.carousel-inner .item img {
+    min-width: 100%;
+}
+

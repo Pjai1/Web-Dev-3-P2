@@ -54,7 +54,7 @@
             <img src="/img/logo_small.png" />
         </div>    
     </div>
-
+    @yield('content')
     <!-- Google Analytics -->
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
