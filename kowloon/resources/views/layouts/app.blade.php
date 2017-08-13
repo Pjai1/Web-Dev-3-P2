@@ -14,6 +14,7 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 </head>
 <body>
+    @if (Cookie::get('cookieClicked') === null)
     <div class="cookie-layer" id="cookie-layer">
         <div class="cookie-window">
             <img src="/img/bone.png" />
@@ -27,6 +28,7 @@
             </div>
         </div>
     </div>
+    @endif
     <div class="side-nav">
         <div class="hamburger">
             <i class="icon menu-icon"></i>
@@ -67,6 +69,7 @@
     </script>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="/js/index.js"></script>
 </body>
 </html>
