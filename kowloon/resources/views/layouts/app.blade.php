@@ -14,18 +14,33 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 </head>
 <body>
+    <div class="cookie-layer" id="cookie-layer">
+        <div class="cookie-window">
+            <img src="/img/bone.png" />
+            <div class="cookie-content">
+                <div class="close-cookie">
+                    <span class="close-cookie-icon" onclick="closeCookie()">X</span>
+                </div>
+                <span class="cookie-title">Cookies</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <button type="submit" class="cookie-button" onclick="closeCookie()">ok, verder surfen</button>
+            </div>
+        </div>
+    </div>
     <div class="side-nav">
         <div class="hamburger">
             <i class="icon menu-icon"></i>
         </div>
-        <div class="upper-side-nav-item">
-            <a href="#"><i class="icon search-icon"></i></a>    
-        </div>
-        <div class="upper-side-nav-item">
-            <a href="#"><i class="icon faq-icon"></i></a>    
-        </div>
-        <div class="upper-side-nav-item">
-            <a href="#"><i class="icon about-icon"></i></a>    
+        <div class="upper-nav-items">
+            <div class="upper-side-nav-item">
+                <a href="#"><i class="icon search-icon"></i></a>    
+            </div>
+            <div class="upper-side-nav-item">
+                <a href="#"><i class="icon faq-icon"></i></a>    
+            </div>
+            <div class="upper-side-nav-item">
+                <a href="#"><i class="icon about-icon"></i></a>    
+            </div>
         </div>
         <div class="divider"></div>
         <div class="category-icons">
@@ -40,7 +55,18 @@
         </div>    
     </div>
 
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-104503858-1', 'auto');
+        ga('send', 'pageview');
+    </script>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="/js/index.js"></script>
 </body>
 </html>
