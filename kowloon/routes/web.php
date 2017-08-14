@@ -17,5 +17,8 @@ Route::get('/', function () {
 
 // Auth::routes();
 
+//HOME
 Route::get('/home', 'HomeController@index');
 Route::get('/cookie', 'CookieController@toggleCookie');
+
+Route::post('/subscribe', 'SubscriberController@store');

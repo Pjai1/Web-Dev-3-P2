@@ -3,7 +3,7 @@
 @font-face{font-family:choplin-light;src:url(/fonts/Choplin-ExtraLight.otf)}
 
 body {
-        background-color: #454545;
+    background-color: #454545;
     color: #cecece;
     font-family: Arial;
     font-size: 14px;
@@ -19,16 +19,17 @@ ol {
 
 .cookie-title, h1 {
     font-family: Choplin !important;
+    color: #fff;
 }
 
 .content {
-        margin-left: 5%;
+    margin-left: 5%;
     width: 95%;
 }
 
-.content p {
+/* .content p {
     color: red;
-}
+} */
 
 /* Navigation */
 .side-nav {
@@ -83,6 +84,7 @@ ol {
 .icon {
     background-image: url('/img/spritesheet.png');
     display: block;
+    background-repeat: no-repeat;
 }
 
 .menu-icon {
@@ -238,3 +240,208 @@ ol {
     min-width: 100%;
 }
 
+/* HOME PAGE STYLING */
+.home-intro {
+    font-family: Calibri;
+    width: 65%;
+    margin-left: 17.5%;
+    margin-top: 75px;
+    text-align: center;
+}
+
+.categories {
+    margin-top: 50px;
+    margin-left: 10%;
+    width: 80%;
+}
+
+.category {
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+    width: 16.3%;
+    height: 75px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.categories .category:nth-child(6n) {
+    border-right: none;
+}
+
+.category i {
+    margin-left: 35%;
+}
+
+.category span {
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    font-size: 1vw;
+    margin-top: 15px;
+    font-family: Choplin-light !important;
+}
+
+.category .icon {
+    zoom: 1;
+}
+
+.other-icon {
+    width: 65px;
+    height: 65px;
+    background-position: -265px -95px;
+}
+
+.main-content {
+    width: 80%;
+    padding-top: 50px;
+    margin-left: 10%;
+}
+
+.hot-items {
+    width: 100%;
+    height: 100%;
+    text-align: justify;
+}
+
+.image-count {
+    margin-top: 5px;
+    margin-left: 5px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(255, 255, 255);
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.image-count span {
+    position: relative;
+    top: 3px;
+    left: 6px;
+    color: rgb(86, 86, 86);
+    padding: 5px;
+}
+
+.overlay {
+    position: relative;
+    width: inherit;
+    height: inherit;
+}
+
+.overlay .after {
+    position: absolute;
+    padding-top: 75px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    color: #FFF;
+}
+
+.overlay:hover .after {
+    display: block;
+    opacity: 0.8;
+    background: #f17da6;
+    text-align: center;
+}
+
+.hot-item {
+    width: 24.5%;
+    display: inline-block;
+    background-color: rgb(86, 86, 86);
+    margin-bottom: 0.5%;
+    margin-right: 0.2%;
+    border-width: 0.5px;
+    border-style: solid;
+    border-color: rgb(113, 113, 113);
+    border-image: initial;
+    padding: 5px;
+}
+
+.hot-item-image {
+    height: 180px;
+}
+
+.hot-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 100%;
+    min-width: 100%;
+    overflow: hidden;
+}
+
+.store-span {
+    float: right;
+    text-align: right;
+    margin: 10px 0px;
+    padding: 5px
+}
+
+.store-span a:link {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.subscription-content {
+    float: left;
+    width: 100%;
+    height: 225px;
+    background-color: rgb(95, 95, 95);
+    margin: 25px 0px 75px;
+}
+
+.promotion {
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    height: 100%;
+    width: 65%;
+    background-image: url('/img/patroon_A.jpg');
+    padding-top: 15px;
+    font-family: Choplin;
+}
+
+.promotion h1 {
+    margin-left: 15%;
+    width: 70%;
+    font-size: 48px;
+    text-transform: none;
+}
+
+.email-content {
+    display: inline-block;
+    height: 100%;
+    width: 35%;
+    float: right;
+    padding: 20px 0px 0px 25px;
+}
+
+.email-content h3 {
+    color: #fff;
+}
+
+.email-content form {
+    margin-top: 30px;
+}
+
+.email-content input[type="text"] {
+    color: rgb(43, 43, 43);
+    width: 75%;
+    padding: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(154, 154, 154);
+    border-image: initial;
+}
+
+.email-content input[type="submit"] {
+    margin-left: -5px;
+    background-color: rgb(50, 50, 50);
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    padding: 12px;
+}

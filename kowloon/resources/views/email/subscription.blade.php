@@ -1,0 +1,1 @@
+Bedankt om je in te schrijven voor onze nieuwsbrief!

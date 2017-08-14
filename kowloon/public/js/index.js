@@ -10,3 +10,9 @@ closeCookie = () => {
     e.open("GET","/cookie",!0),
     e.send()
 }
+
+$(document).ready(() => {
+    setTimeout(() => {
+        $('.successMsg, .warningMsg').fadeOut('fast');
+    }, 5000);
+})

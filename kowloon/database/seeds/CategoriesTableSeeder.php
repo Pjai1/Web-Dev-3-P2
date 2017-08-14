@@ -12,23 +12,33 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-            'name' => 'Honden'
+            'name' => 'Honden',
+            'classname' => 'dog-icon'
         ]);
 
         DB::table('categories')->insert([
-            'name' => 'Katten'
+            'name' => 'Katten',
+            'classname' => 'cat-icon'
         ]);
 
         DB::table('categories')->insert([
-            'name' => 'Vissen'
+            'name' => 'Vissen',
+            'classname' => 'fish-icon'
         ]);
 
         DB::table('categories')->insert([
-            'name' => 'Vogels'
+            'name' => 'Vogels',
+            'classname' => 'bird-icon'
         ]);
 
         DB::table('categories')->insert([
-            'name' => 'Kleine dieren'
-        ]);        
+            'name' => 'Kleine dieren',
+            'classname' => 'animal-icon'
+        ]);   
+
+        DB::table('categories')->insert([
+            'name' => 'Andere',
+            'classname' => 'other-icon'
+        ]);           
     }
 }
