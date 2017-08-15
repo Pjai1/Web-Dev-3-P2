@@ -4,12 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ContactMessage;
+use App\Repositories\FaqRepository;
 use Session;
 
 class AboutController extends Controller
 {
+    private $faqs;
+
+    public function __construct(FaqRepository $faqs) {
+        $this->faqs = $faqs;
+    }
+
     public function index() {
-        return view('about');
+        $faqs = $this->faqs->getAll();
+
+        return view('about', [
+            'faqs' => $faqs
+        ]);
     }
 
     public function store(Request $request) {

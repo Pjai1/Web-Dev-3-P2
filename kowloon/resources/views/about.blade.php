@@ -61,6 +61,7 @@
                     </div>
                 {!! Form::close() !!}
             </div>
+            @include('common.faq')
         </div>
     </div>
 @endsection

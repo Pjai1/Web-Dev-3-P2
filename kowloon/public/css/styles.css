@@ -536,3 +536,21 @@ ol {
     border-image: initial;
 }
 
+/* FAQ STYLING */
+.faq-content {
+    width: 100%;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.faq {
+    background-color: #717171;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.faq p {
+    margin: 10px 0 5px 25px;
+    font-weight: 500;
+    font-size: 16px;
+}
