@@ -21,4 +21,9 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index');
 Route::get('/cookie', 'CookieController@toggleCookie');
 
+//ABOUT
+Route::get('/about', 'AboutController@index');
+Route::post('/contact', 'AboutController@store');
+
+//SHARED
 Route::post('/subscribe', 'SubscriberController@store');

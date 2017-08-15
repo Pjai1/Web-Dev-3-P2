@@ -41,8 +41,8 @@
                 </div>
             @endforeach
             <span class="store-span"><a href="#">Ga naar winkel</a></span>
-            @include('common.subscribe')
         </div>
+        @include('common.subscribe')
     </div> 
 </div>
 

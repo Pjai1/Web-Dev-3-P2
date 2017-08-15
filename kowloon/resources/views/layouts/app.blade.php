@@ -40,13 +40,13 @@
             <div class="upper-side-nav-item">
                 <a href="#"><i class="icon faq-icon"></i></a>    
             </div>
-            <div class="upper-side-nav-item">
-                <a href="#"><i class="icon about-icon"></i></a>    
+            <div class="upper-side-nav-item {{Request::is('*/about') ? 'active-nav-item': null}}">
+                <a href="/about"><i class="icon about-icon"></i></a>    
             </div>
         </div>
         <div class="divider"></div>
         <div class="category-icons">
-            <a href="#"><i class="icon dog-icon"></i></a>
+            <a href="#"><i class="icon dog-icon {{Request::is('*/category/1*') ? 'active-icon': ''}}"></i></a>
             <a href="#"><i class="icon cat-icon"></i></a>
             <a href="#"><i class="icon fish-icon"></i></a>
             <a href="#"><i class="icon bird-icon"></i></a>
