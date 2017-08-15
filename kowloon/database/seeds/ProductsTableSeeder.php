@@ -42,5 +42,21 @@ class ProductsTableSeeder extends Seeder
             'description' => 'Hondenkoelmat',
             'technical_info' => 'Dit is technische hondenkoelmatinfo'
         ]);
+
+        DB::table('products')->insert([
+            'category_id' => 1,
+            'name' => 'Koelmat',
+            'price' => 15.49,
+            'description' => 'Hondenkoelmat',
+            'technical_info' => 'Dit is technische hondenkoelmatinfo'
+        ]);
+
+        DB::table('products')->insert([
+            'category_id' => 1,
+            'name' => 'Koelmat',
+            'price' => 15.49,
+            'description' => 'Hondenkoelmat',
+            'technical_info' => 'Dit is technische hondenkoelmatinfo'
+        ]);
     }
 }

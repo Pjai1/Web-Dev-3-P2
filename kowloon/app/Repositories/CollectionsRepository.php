@@ -2,9 +2,9 @@
 
 namespace App\Repositories;
 
-use App\Category;
+use App\Collection;
 
-class CategoriesRepository
+class CollectionsRepository
 {
     /**
      * Get all of the entrys
@@ -13,11 +13,6 @@ class CategoriesRepository
      */
     public function getAll()
     {
-        return Category::all();
-    }
-
-    public function getById($id)
-    {
-        return Category::find($id);
+        return Collection::all();
     }
 }

@@ -25,5 +25,8 @@ Route::get('/cookie', 'CookieController@toggleCookie');
 Route::get('/about', 'AboutController@index');
 Route::post('/contact', 'AboutController@store');
 
+//CATEGORY
+Route::get('category/{id}', 'CategoryController@index');
+
 //SHARED
 Route::post('/subscribe', 'SubscriberController@store');
