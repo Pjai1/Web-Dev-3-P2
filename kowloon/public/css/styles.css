@@ -42,6 +42,36 @@ ol {
     width: 95%;
 }
 
+/* WELCOME PAGE STYLING */
+.intro-logo {
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 10%;
+}
+
+.language-content {
+    width: 40%;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.language {
+    width: 80%;
+    margin: 40px 10%;
+    height: 40%;
+    padding-top: 65px;
+    text-align: center;
+    background-color: #fff;
+    float: left;
+}
+
+.language span {
+    font-family: Choplin;
+    color: #e27500;
+    font-weight: bold;
+    font-size: 30px;
+}
+
 /* Navigation */
 .active-nav-item {
     background-color: #f6f6f6;

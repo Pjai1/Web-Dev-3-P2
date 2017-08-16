@@ -11,31 +11,31 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@index');
 
 // Auth::routes();
 
-//HOME
-Route::get('/home', 'HomeController@index');
-Route::get('/cookie', 'CookieController@toggleCookie');
+Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect']], function() {
+    //HOME
+    Route::get('/home', 'HomeController@index');
+    Route::get('/cookie', 'CookieController@toggleCookie');
 
-//ABOUT
-Route::get('/about', 'AboutController@index');
-Route::post('/contact', 'AboutController@store');
+    //ABOUT
+    Route::get('/about', 'AboutController@index');
+    Route::post('/contact', 'AboutController@store');
 
-//CATEGORY
-Route::get('category/{id}', 'CategoryController@index');
+    //CATEGORY
+    Route::get('category/{id}', 'CategoryController@index');
 
-//PRODUCT DETAIL VIEW
-Route::get('category/{category_id}/product/{product_id}', 'ProductDetailController@index');
+    //PRODUCT DETAIL VIEW
+    Route::get('category/{category_id}/product/{product_id}', 'ProductDetailController@index');
 
-//FAQ
-Route::get('/faq', 'FaqController@index');
+    //FAQ
+    Route::get('/faq', 'FaqController@index');
 
-//SEARCH
-Route::get('/search', 'SearchController@index');
+    //SEARCH
+    Route::get('/search', 'SearchController@index');
 
-//SHARED
-Route::post('/subscribe', 'SubscriberController@store');
+    //SHARED
+    Route::post('/subscribe', 'SubscriberController@store');
+});
