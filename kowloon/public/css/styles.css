@@ -2,6 +2,10 @@
 @font-face{font-family:choplin;src:url(/fonts/Choplin-Medium.otf)}
 @font-face{font-family:choplin-light;src:url(/fonts/Choplin-ExtraLight.otf)}
 
+body, html {
+    height: 100%;
+}
+
 body {
     background-color: #454545;
     color: #cecece;
@@ -21,6 +25,13 @@ ol {
     margin-bottom: 10px;
 }
 
+.page-wrapper {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 0 0 30px 0;
+}
+
 .cookie-title, h1 {
     font-family: Choplin !important;
     color: #fff;
@@ -38,10 +49,11 @@ ol {
 
 .side-nav {
     width: 5%;
-    float: left;
-    background-color: #323232;
+    position: absolute;
+    top: 0;
     bottom: 0;
-    overflow: hidden;
+    left: 0;
+    background-color: #323232;
 }
 
 .upper-side-nav-item, .hamburger {
@@ -62,10 +74,11 @@ ol {
 }
 
 .nav-logo {
-    margin: 30%;
-    position: relative;
-    height: 1000px;
+    margin: 30px;
+    padding: 30px;
+    position: absolute;
     width: 300px;
+    bottom: 0;
 }
 
 .nav-logo img {
@@ -393,20 +406,19 @@ ol {
 }
 
 .subscription-content {
-    float: left;
     width: 100%;
     height: 225px;
     background-color: rgb(95, 95, 95);
-    margin: 25px 0px 75px;
+    margin-top: 40px;
 }
 
 .promotion {
-    display: inline-block;
     color: #fff;
     text-align: center;
     height: 100%;
+    float: left;
     width: 65%;
-    background-image: url('/img/patroon_A.jpg');
+    background-image: url(/img/patroon_A.jpg);
     padding-top: 15px;
     font-family: Choplin;
 }
@@ -419,11 +431,12 @@ ol {
 }
 
 .email-content {
-    display: inline-block;
     height: 100%;
     width: 35%;
     float: right;
-    padding: 20px 0px 0px 25px;
+    padding: 20px 0 0 20px;
+    margin: 0;
+    margin-top: -15px;
 }
 
 .email-content h3 {
@@ -630,4 +643,147 @@ ol {
 
 .pagination {
     height: 50px;
+}
+
+/* PRODUCT DETAIL PAGE */
+
+.product-detail-image {
+    border: .5px solid #717171;
+    width: 49%;
+    float: left;
+    padding: 5px;
+    background-color: #565656;
+    margin-right: 2%;
+    margin-top: 225px;
+}
+
+.main-product-image {
+    height: 300px;
+    width: 100%;
+}
+
+.main-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.product-details-thumbnail {
+    height: 150px;
+}
+
+.product-thumbnail {
+    width: 32.5%;
+    display: inline-block;
+    background-color: #565656;
+    padding-top: 10px;
+}
+
+.details-image-content {
+    height: 120px;
+    border: 2px solid white;
+    opacity: 1;
+}
+
+.details-image-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.details-image-content span {
+    text-align: left;
+    font-size: 14px;
+}
+
+.product-detail-description {
+    color: #fff;
+    width: 49%;
+    float: right;
+    padding: 5px;
+    margin-top: 225px;
+}
+
+.details-title {
+    display: inline-block;
+}
+
+.collection {
+    white-space: nowrap;
+    margin: 0 5px 10px 15px;
+    display: inline-block;
+    height: 25px;
+    padding: 0 15px;
+    background: #323232;
+    border: 0 solid #323232;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    color: #fff;
+    line-height: 23px;
+}
+
+.collection::before {
+    position: absolute;
+    content: "";
+    color: #fff;
+    text-shadow: 0 0 1px #333;
+    font-size: 11px;
+    line-height: 0;
+    text-indent: 12px;
+    left: -15px;
+    width: 1px;
+    height: 0;
+    border-right: 15px solid #323232;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+}
+
+.category-color {
+    display: inline-block;
+    position: relative;
+    top: 1px;
+    left: -7.5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ff6f9e;
+}
+
+.color {
+    margin-right: 5px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.product-specs {
+    padding: 15px;
+    width: 100%;
+    border: .5px solid #717171;
+    height: 200px;
+    margin-top: 700px;
+}
+
+.spec span {
+    margin: 0 20px;
+}
+
+.related-products {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+}
+
+.related-product {
+    border: .5px solid #717171;
+    width: 24.5%;
+    display: inline-block;
+    background-color: #565656;
+    padding: 5px;
+    margin-bottom: .5%;
+    margin-right: .2%;
 }

@@ -14,49 +14,51 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 </head>
 <body>
-    @if (Cookie::get('cookieClicked') === null)
-    <div class="cookie-layer" id="cookie-layer">
-        <div class="cookie-window">
-            <img src="/img/bone.png" />
-            <div class="cookie-content">
-                <div class="close-cookie">
-                    <span class="close-cookie-icon" onclick="closeCookie()">X</span>
+    <div class="page-wrapper">
+        @if (Cookie::get('cookieClicked') === null)
+        <div class="cookie-layer" id="cookie-layer">
+            <div class="cookie-window">
+                <img src="/img/bone.png" />
+                <div class="cookie-content">
+                    <div class="close-cookie">
+                        <span class="close-cookie-icon" onclick="closeCookie()">X</span>
+                    </div>
+                    <span class="cookie-title">Cookies</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <button type="submit" class="cookie-button" onclick="closeCookie()">ok, verder surfen</button>
                 </div>
-                <span class="cookie-title">Cookies</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <button type="submit" class="cookie-button" onclick="closeCookie()">ok, verder surfen</button>
             </div>
         </div>
-    </div>
-    @endif
-    <div class="side-nav">
-        <div class="hamburger">
-            <i class="icon menu-icon"></i>
-        </div>
-        <div class="upper-nav-items">
-            <div class="upper-side-nav-item">
-                <a href="#"><i class="icon search-icon"></i></a>    
+        @endif
+        <div class="side-nav">
+            <div class="hamburger">
+                <i class="icon menu-icon"></i>
             </div>
-            <div class="upper-side-nav-item">
-                <a href="#"><i class="icon faq-icon"></i></a>    
+            <div class="upper-nav-items">
+                <div class="upper-side-nav-item">
+                    <a href="#"><i class="icon search-icon"></i></a>    
+                </div>
+                <div class="upper-side-nav-item">
+                    <a href="#"><i class="icon faq-icon"></i></a>    
+                </div>
+                <div class="upper-side-nav-item {{ $_SERVER['REQUEST_URI'] == '/about' ? 'active-nav-item' : null}}">
+                    <a href="/about"><i class="icon about-icon"></i></a>    
+                </div>
             </div>
-            <div class="upper-side-nav-item {{Request::is('*/about') ? 'active-nav-item': null}}">
-                <a href="/about"><i class="icon about-icon"></i></a>    
+            <div class="divider"></div>
+            <div class="category-icons">
+                <a href="#"><i class="icon dog-icon {{Request::is('*/category/1*') ? 'active-icon': ''}}"></i></a>
+                <a href="#"><i class="icon cat-icon"></i></a>
+                <a href="#"><i class="icon fish-icon"></i></a>
+                <a href="#"><i class="icon bird-icon"></i></a>
+                <a href="#"><i class="icon animal-icon"></i></a>
             </div>
+            <div class="nav-logo">
+                <img src="/img/logo_small.png" />
+            </div>    
         </div>
-        <div class="divider"></div>
-        <div class="category-icons">
-            <a href="#"><i class="icon dog-icon {{Request::is('*/category/1*') ? 'active-icon': ''}}"></i></a>
-            <a href="#"><i class="icon cat-icon"></i></a>
-            <a href="#"><i class="icon fish-icon"></i></a>
-            <a href="#"><i class="icon bird-icon"></i></a>
-            <a href="#"><i class="icon animal-icon"></i></a>
+        @yield('content')
         </div>
-        <div class="nav-logo">
-            <img src="/img/logo_small.png" />
-        </div>    
-    </div>
-    @yield('content')
     <!-- Google Analytics -->
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

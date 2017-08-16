@@ -28,5 +28,8 @@ Route::post('/contact', 'AboutController@store');
 //CATEGORY
 Route::get('category/{id}', 'CategoryController@index');
 
+//PRODUCT DETAIL VIEW
+Route::get('category/{category_id}/product/{product_id}', 'ProductDetailController@index');
+
 //SHARED
 Route::post('/subscribe', 'SubscriberController@store');

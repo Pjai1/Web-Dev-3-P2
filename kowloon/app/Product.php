@@ -28,4 +28,16 @@ class Product extends Model
     public function collections() {
         return $this->belongsToMany(Collection::class);
     }
+
+    public function faqs() {
+        return $this->belongsToMany(Faq::class);
+    }
+
+    public function colors() {
+        return $this->hasMany(Color::class);
+    }
+
+    public function dimensions() {
+        return $this->hasMany(Dimension::class);
+    }
 }
