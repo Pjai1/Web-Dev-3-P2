@@ -32,8 +32,33 @@ class ProductCollectionsTableSeeder extends Seeder
         ]);
 
         DB::table('collection_product')->insert([
+            'product_id' => 6,
+            'collection_id' => 4
+        ]);
+
+        DB::table('collection_product')->insert([
+            'product_id' => 5,
+            'collection_id' => 2
+        ]);
+
+        DB::table('collection_product')->insert([
+            'product_id' => 5,
+            'collection_id' => 4
+        ]);
+
+        DB::table('collection_product')->insert([
+            'product_id' => 2,
+            'collection_id' => 4
+        ]);
+
+        DB::table('collection_product')->insert([
+            'product_id' => 3,
+            'collection_id' => 1
+        ]);
+
+        DB::table('collection_product')->insert([
             'product_id' => 1,
-            'collection_id' => 5
+            'collection_id' => 4
         ]);
     }
 }

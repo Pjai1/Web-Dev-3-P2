@@ -17,9 +17,11 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories');
-            $table->string('name');
+            $table->string('nl_name');
+            $table->string('fr_name');
             $table->double('price');
-            $table->string('description');
+            $table->string('nl_description');
+            $table->string('fr_description');
             $table->string('technical_info');
             $table->timestamps();
         });

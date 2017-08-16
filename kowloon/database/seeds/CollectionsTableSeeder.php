@@ -12,23 +12,28 @@ class CollectionsTableSeeder extends Seeder
     public function run()
     {
         DB::table('collections')->insert([
-            'name' => 'Waterplezier'
+            'nl_name' => 'Waterplezier',
+            'fr_name' => 'Fraicheur'
         ]);
 
         DB::table('collections')->insert([
-            'name' => 'Luxe'
+            'nl_name' => 'Luxe',
+            'fr_name' => 'Luxe'
         ]);
 
         DB::table('collections')->insert([
-            'name' => 'Nieuw'
+            'nl_name' => 'Nieuw',
+            'fr_name' => 'Nouveau'
         ]);
 
         DB::table('collections')->insert([
-            'name' => 'Korting'
+            'nl_name' => 'Korting',
+            'fr_name' => 'En Soldes'
         ]);
 
         DB::table('collections')->insert([
-            'name' => 'Andere'
+            'nl_name' => 'Andere',
+            'fr_name' => 'Autres'
         ]);
     }
 }
