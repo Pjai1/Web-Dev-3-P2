@@ -11,6 +11,15 @@ closeCookie = () => {
     e.send()
 }
 
+ keyPress = (e) => { 
+    document.getElementsByClassName("orange")[0];
+
+    if(e.keyCode === 13) {
+        var form = document.getElementById("search-form");
+        form.submit(); 
+    }
+}
+
 $(document).ready(() => {
     setTimeout(() => {
         $('.successMsg, .warningMsg').fadeOut('fast');

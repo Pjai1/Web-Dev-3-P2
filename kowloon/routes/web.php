@@ -34,5 +34,8 @@ Route::get('category/{category_id}/product/{product_id}', 'ProductDetailControll
 //FAQ
 Route::get('/faq', 'FaqController@index');
 
+//SEARCH
+Route::get('/search', 'SearchController@index');
+
 //SHARED
 Route::post('/subscribe', 'SubscriberController@store');

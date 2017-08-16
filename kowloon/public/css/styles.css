@@ -44,7 +44,7 @@ ol {
 
 /* Navigation */
 .active-nav-item {
-    background-color: #fff;
+    background-color: #f6f6f6;
 }
 
 .side-nav {
@@ -57,11 +57,14 @@ ol {
 }
 
 .upper-side-nav-item, .hamburger {
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+.upper-side-nav-item i, .hamburger {
     margin-top: 12.5%;
     margin-bottom: 5%;
     margin-left: 27.5%;
-    padding-bottom: 5%;
-    padding-top: 5%;
 }
 
 .upper-nav-items {
@@ -802,7 +805,7 @@ ol {
     min-width: 100%;
 } */
 
-/* FAQ */
+/* FAQ PAGE STYLING */
 .faq-page {
     margin-left: 5%;
     width: 95%;
@@ -810,12 +813,11 @@ ol {
     background-color: #f6f6f6!important;
     min-height: 100vh!important;
     padding: 50px;
-    opacity: 0.85;
 }
 
 .faq-page h1 {
     margin: 40px 0;
-    color: orange;
+    color: #e27500;
 }
 
 .search-faq {
@@ -876,3 +878,39 @@ ol {
     font-weight: 500;
 }
 
+/* SEARCH PAGE STYLING */
+.search-title {
+    font-family: Arial;
+    font-size: 18px;
+    color: black;
+}
+
+.black-caret {
+    color: black;
+}
+
+.filters p {
+    margin-top: 25px;
+    color: black;
+}
+
+.orange::-webkit-input-placeholder {
+    color: #e27500;
+}
+.orange:-moz-placeholder {
+    /* FF 4-18 */
+    color: #e27500;
+}
+.orange::-moz-placeholder {
+    /* FF 19+ */
+    color: #e27500;
+}
+.orange:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #e27500;
+}
+
+.clearfix {
+    height: 75px;
+    width: 100%;
+}

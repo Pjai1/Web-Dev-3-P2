@@ -35,11 +35,11 @@
                 <i class="icon menu-icon"></i>
             </div>
             <div class="upper-nav-items">
-                <div class="upper-side-nav-item">
-                    <a href="#"><i class="icon search-icon"></i></a>    
+                <div class="upper-side-nav-item {{ $_SERVER['REQUEST_URI'] == '/search' ? 'active-nav-item' : null}}">
+                    <a href="/search"><i class="icon search-icon"></i></a>    
                 </div>
-                <div class="upper-side-nav-item">
-                    <a href="#"><i class="icon faq-icon"></i></a>    
+                <div class="upper-side-nav-item {{ $_SERVER['REQUEST_URI'] == '/faq' ? 'active-nav-item' : null}}">
+                    <a href="/faq"><i class="icon faq-icon"></i></a>    
                 </div>
                 <div class="upper-side-nav-item {{ $_SERVER['REQUEST_URI'] == '/about' ? 'active-nav-item' : null}}">
                     <a href="/about"><i class="icon about-icon"></i></a>    
