@@ -67,10 +67,13 @@
             <h1 class="title">Gerelateerde Producten</h1>
             <div class="related-products">
                 @foreach ($relatedProducts as $product)
-                    <div class="related-product">
-                        <a href="/category/{{$product->category_id}}/product/{{$product->id}}">
-                            <div class="related-product-image">
-                                <img src="/img/{{$product->productImages->first()->image_url}}" />
+                    <div class="hot-item">
+                        <a href="#">
+                            <div class="hot-item-image">
+                                <div class="overlay">
+                                    <img src="/img/{{$product->productImages->first()->image_url}}" />
+                                    <div class="after">Details</div>
+                                </div>
                             </div>
                         </a>
                     </div>

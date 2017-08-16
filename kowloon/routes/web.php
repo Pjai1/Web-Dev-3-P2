@@ -31,5 +31,8 @@ Route::get('category/{id}', 'CategoryController@index');
 //PRODUCT DETAIL VIEW
 Route::get('category/{category_id}/product/{product_id}', 'ProductDetailController@index');
 
+//FAQ
+Route::get('/faq', 'FaqController@index');
+
 //SHARED
 Route::post('/subscribe', 'SubscriberController@store');

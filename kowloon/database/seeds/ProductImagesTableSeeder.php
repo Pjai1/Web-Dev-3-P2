@@ -40,5 +40,17 @@ class ProductImagesTableSeeder extends Seeder
             'image_url' => 'cooling_mat.png',
             'description' => 'Cooling Mat for Dogs'
         ]);
+
+        DB::table('product_images')->insert([
+            'product_id' => 5,
+            'image_url' => 'cooling_mat.png',
+            'description' => 'Cooling Mat for Dogs'
+        ]);
+
+        DB::table('product_images')->insert([
+            'product_id' => 6,
+            'image_url' => 'cooling_mat.png',
+            'description' => 'Cooling Mat for Dogs'
+        ]);
     }
 }
