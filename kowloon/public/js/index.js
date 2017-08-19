@@ -48,30 +48,32 @@ function getParameterByName(param, url) {
     let filterValues = document.getElementsByClassName('filter-value');
     let valuesArray = [];
 
-    for (let i = 0; i < filterValues.length; i++) {
-        valuesArray.push(filterValues[i].text);
+    if(dropdown) {
+        for (let i = 0; i < filterValues.length; i++) {
+            valuesArray.push(filterValues[i].text);
+        }
+
+        switch(sortBy)
+        {
+            case 'price_asc': sortByOutput = valuesArray[1];
+                break;
+
+            case 'price_desc': sortByOutput = valuesArray[2];
+                break;
+
+            case 'latest': sortByOutput = valuesArray[3];
+                break;
+
+            case 'oldest': sortByOutput = valuesArray[4];
+                break;
+                
+            default: sortByOutput = valuesArray[0];
+                    sortBy = 'relevance';
+        }
+
+        selectSort.value = sortBy;
+        dropdown.innerHTML = sortByOutput + ' <span class="caret"></span>';
     }
-
-    switch(sortBy)
-    {
-        case 'price_asc': sortByOutput = valuesArray[1];
-            break;
-
-        case 'price_desc': sortByOutput = valuesArray[2];
-            break;
-
-        case 'latest': sortByOutput = valuesArray[3];
-            break;
-
-        case 'oldest': sortByOutput = valuesArray[4];
-            break;
-            
-        default: sortByOutput = valuesArray[0];
-                 sortBy = 'relevance';
-    }
-
-    selectSort.value = sortBy;
-    dropdown.innerHTML = sortByOutput + ' <span class="caret"></span>';
 })();
 
 $(document).ready(() => {

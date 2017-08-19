@@ -22,12 +22,13 @@
         <div class="hot-items">
             @foreach ($hotitems as $hotitem)
                 <div class="hot-item">
+                    
                     @if ($hotitem->product->productImages->count() > 1)
 						<div class="image-count">
 							<span>{{$hotitem->product->productImages->count()}}</span>
-						</div>
-					@endif
-                    <a href="#">
+                        </div>
+                    @endif
+                    <a href="/category/{{$hotitem->product->category->id}}/product/{{$hotitem->product->id}}">
                         <div class="hot-item-image">
                             <div class="overlay">
                                 <img src="/img/{{$hotitem->product->productImages->first()->image_url}}" />

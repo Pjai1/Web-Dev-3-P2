@@ -41,17 +41,21 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
 });
 
 Route::group(['middleware' => 'auth'], function() {
-    Route::get('admin/dashboard', 'AdminController@index');
-    Route::get('admin/products', 'ProductController@index');
-    Route::post('admin/products/create', 'ProductController@store');
-    Route::get('admin/products/{id}', 'ProductController@show');
-    Route::get('admin/products/{id}/edit', 'ProductController@edit');
-    Route::post('admin/products/{id}/edit', 'ProductController@update');
-    Route::post('admin/products/{id}/delete', 'ProductController@destroy');
-    Route::get('admin/questions', 'QuestionController@index');
-    Route::post('admin/questions/create', 'QuestionController@store');
-    Route::post('admin/questions/{id}/edit', 'QuestionController@update');
-    Route::get('admin/questions/{id}', 'QuestionController@show');
-    Route::get('admin/questions/{id}/edit', 'QuestionController@edit');
-    Route::post('admin/questions/{id}/delete', 'QuestionController@destroy');
+    //HOTITEMS
+    Route::post('/admin/hotitems', 'AdminController@updateHotItem');
+    Route::get('/admin/dashboard', 'AdminController@index');
+    //PRODUCTS
+    Route::get('/admin/products', 'ProductController@index');
+    Route::post('/admin/products/create', 'ProductController@store');
+    Route::get('/admin/products/{id}', 'ProductController@show');
+    Route::get('/admin/products/{id}/edit', 'ProductController@edit');
+    Route::post('/admin/products/{id}/edit', 'ProductController@update');
+    Route::post('/admin/products/{id}/delete', 'ProductController@destroy');
+    //FAQS
+    Route::get('/admin/faqs', 'FaqController@indexAdminFaqs');
+    Route::get('/admin/faqs/create', 'FaqController@create');
+    Route::post('/admin/faqs/create', 'FaqController@store');
+    Route::post('/admin/faqs/{id}/edit', 'FaqController@update');
+    Route::get('/admin/faqs/{id}/edit', 'FaqController@edit');
+    Route::post('/admin/faqs/{id}/delete', 'FaqController@destroy');
 });

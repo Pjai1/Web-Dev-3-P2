@@ -31,7 +31,7 @@ class AdminController extends Controller
         foreach($request->hotitems as $key => $ht_id) {
             $hotItems = $this->hotItems->getById($key+1);
             $hotItems->product_id = $ht_id;
-            $ht->save();
+            $hotItems->save();
         }
 
         Session::flash('hotitems_update', 'Hot items updated!');

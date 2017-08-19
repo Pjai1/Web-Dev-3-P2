@@ -4,7 +4,7 @@
 @include('common.carousel')
     <div class="content">
         <div class="main-content">
-            <h1 class="title">Hondenartikelen</h1>
+            <h1 class="title">{{$category-> {LaravelLocalization::getCurrentLocale()."_name"} }}</h1>
                 <div id="toggleFilter" onclick="filterProducts()">
                     <span>Filter</span>
                     <span class="caret"></span>
@@ -60,7 +60,7 @@
                                         <span>{{$product->productImages->count()}}</span>
                                     </div>
                                 @endif
-                                <a href="#">
+                                <a href="/category/{{$category->id}}/product/{{$product->id}}">
                                     <div class="hot-item-image">
                                         <div class="overlay">
                                             <img src="/img/{{$product->productImages->first()->image_url}}" />

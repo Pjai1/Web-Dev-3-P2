@@ -72,6 +72,26 @@ class ProductsTableSeeder extends Seeder
         ]);
 
         DB::table('products')->insert([
+            'category_id' => 2,
+            'nl_name' => 'Katzetel',
+            'fr_name' => 'Tapis de refroidissement',
+            'price' => 1.49,
+            'nl_description' => 'Zetel voor katten',
+            'fr_description' => 'Tapis de refroidissement',
+            'technical_info' => 'Dit is technische hondenkoelmatinfo'
+        ]);
+
+        DB::table('products')->insert([
+            'category_id' => 2,
+            'nl_name' => 'Katzetel',
+            'fr_name' => 'Tapis de refroidissement',
+            'price' => 200.49,
+            'nl_description' => 'Zetel voor katten',
+            'fr_description' => 'Tapis de refroidissement',
+            'technical_info' => 'Dit is technische hondenkoelmatinfo'
+        ]);
+
+        DB::table('products')->insert([
             'category_id' => 3,
             'nl_name' => 'Vishengel',
             'fr_name' => 'canne à pêche',

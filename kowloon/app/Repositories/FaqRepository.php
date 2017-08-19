@@ -15,4 +15,9 @@ class FaqRepository
     {
         return Faq::all();
     }
+
+    public function getById($id)
+    {
+        return Faq::find($id);
+    }
 }

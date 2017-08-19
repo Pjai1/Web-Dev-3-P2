@@ -15,7 +15,7 @@
                         <div class="details-image-content">
                             <img src="/img/{{$image->image_url}}" />
                         </div>
-                        <span>{{$image->description}}</span>
+                        <span>{{$image-> {LaravelLocalization::getCurrentLocale()."_description"} }}</span>
                     </div>
                 @endforeach
             </div>
@@ -25,15 +25,15 @@
                 <img src="/img/logo_small.png" class="logo_small" />
                 <div class="about-text">
                     <div class="category-color"></div>
-                        {{$product->category->name}}
+                        {{$product->category-> {LaravelLocalization::getCurrentLocale()."_name"} }}
                 </div>
                 @foreach ($product->collections as $collection)
                     <div class="about-text">
-                        {{$collection->name}}
+                        {{$collection-> {LaravelLocalization::getCurrentLocale()."_name"} }}
                     </div>
                 @endforeach
             </div>
-            <h1 class="title">{{$product->name}}</h1>
+            <h1 class="title">{{$product-> {LaravelLocalization::getCurrentLocale()."_name"} }}</h1>
             <h2>€ {{$product->price}}</h2>
             @if ($product->colors->count())
                 <h2>Kleuren</h2>
@@ -43,7 +43,7 @@
                 @endforeach
             @endif
             <h2>Beschrijving</h2>
-            <p>{{$product->description}}</p>
+            <p>{{$product-> {LaravelLocalization::getCurrentLocale()."_description"} }}</p>
         </div>
         <hr>
         <div class="product-specs">
@@ -68,7 +68,7 @@
             <div class="related-products">
                 @foreach ($relatedProducts as $product)
                     <div class="hot-item">
-                        <a href="#">
+                        <a href="/category/{{$product->category_id}}/product/{{$product->id}}">
                             <div class="hot-item-image">
                                 <div class="overlay">
                                     <img src="/img/{{$product->productImages->first()->image_url}}" />

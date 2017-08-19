@@ -11,17 +11,17 @@
         @if (Session::has('hotitems_update'))
             <div class="alert alert-success successMsg"><span>{{ session('hotitems_update') }}</span></div>
         @endif
-            <div class="admin-tab">
+            <div class="search-result admin">
                 <h3 class="title">Faqs</h3>
                 <a href="/admin/faqs">Faqs Dashboard</a>
             </div>
 
-            <div class="admin-tab">
+            <div class="search-result admin">
                 <h3 class="title">Products</h3>
                 <a href="/admin/products">Products Dashboard</a>
             </div>
 
-            <div class="admin-tab">
+            <div class="search-result admin">
                 <h3 class="title">Hot Items</h3>
                 <form action="/admin/hotitems" method="POST">
                     {{ Form::token() }}
@@ -30,12 +30,12 @@
                             <h4>Hot Item {{$ht->id}}</h4>
                             <select name="hotitems[]">
                                 @foreach ($products as $product)
-                                    <option value="{{$product->id}}" {{ ($ht->product->id ? "selected=selected" : "") }}>{{$product->name}}</option>
+                                    <option value="{{$product->id}}" {{ ($ht->product->id ? "selected=selected" : "") }}>{{$product-> {LaravelLocalization::getCurrentLocale()."_name"} }}</option>
                                 @endforeach
                             </select>
                         </div>
                     @endforeach
-                    <div class="form-group">
+                    <div class="form-group" style="margin-top: 20px;">
                         <input type="submit" class="button" value="Update">
                     </div>
                 </form>

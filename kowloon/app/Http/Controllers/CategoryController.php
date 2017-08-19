@@ -39,7 +39,6 @@ class CategoryController extends Controller
 
         if($request->collections) {
             $selectedCollections = $request->collections;
-            // dd($selectedCollections);
 
             foreach($selectedCollections as $key => $collectionId) {
                 $query->whereHas('collections', function($q) use ($collectionId) {
