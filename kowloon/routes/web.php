@@ -46,8 +46,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/admin/dashboard', 'AdminController@index');
     //PRODUCTS
     Route::get('/admin/products', 'ProductController@index');
+    Route::get('/admin/products/create', 'ProductController@create');
     Route::post('/admin/products/create', 'ProductController@store');
-    Route::get('/admin/products/{id}', 'ProductController@show');
     Route::get('/admin/products/{id}/edit', 'ProductController@edit');
     Route::post('/admin/products/{id}/edit', 'ProductController@update');
     Route::post('/admin/products/{id}/delete', 'ProductController@destroy');

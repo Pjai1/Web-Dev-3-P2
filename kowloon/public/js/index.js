@@ -76,6 +76,54 @@ function getParameterByName(param, url) {
     }
 })();
 
+let colorCount = 0;
+
+colorInput = () => {
+    let colorContainer = document.getElementById('colorWheel');
+    let divEl = document.createElement('div');
+    colorCount++;
+
+    divEl.innerHTML = '<input type="color" name="colors[]" value="#000000"><button type="button" id="deleteColor' + colorCount + '" onclick="deleteColorInput(this)">Remove</button>';
+    divEl.className += "colorContainer";
+    divEl.setAttribute('id', 'colorCount' + colorCount);
+    colorContainer.appendChild(divEl);
+}
+
+deleteColorInput = (el) => {
+	let colorId = el.id.replace(el.id.substring(0,11), '');
+    console.log(el)
+	document.getElementById('colorCount' + colorId).remove();
+}
+
+let dimensionsCount = 0;
+
+dimensionInput = () => {
+	var dimensionsContainer = document.getElementById('dimensionsContainer');
+    var divEl = document.createElement('div');
+    dimensionsCount++;
+
+	divEl.innerHTML = '<input type="text" name="dimensions[]"><button type="button" id="deleteDimensions' + dimensionsCount + '" onclick="deleteDimensionInput(this)">Remove</button>';
+	divEl.className += "dimensions";
+	divEl.setAttribute('id', 'dimensionsCount' + dimensionsCount);
+	dimensionsContainer.appendChild(divEl);
+}
+
+deleteDimensionInput = (el) => {
+    let id = el.id.replace(el.id.substring(0,16), '')
+    
+	document.getElementById('dimensionsCount' + id).remove();
+}
+
+let imagesCount = 1;
+
+createImageContainer = () => {
+    let containerCopy = document.getElementById('upload-image').cloneNode(false);
+    imagesCount++;
+
+	document.getElementById('image-upload-container').appendChild(containerCopy);
+	containerCopy.innerHTML = '<hr><label for="image_desc_nl[]">Image Desc nl</label><input type="text" name="image_desc_nl[]" class="form-control"><label for="image_desc_fr[]">Image Desc fr</label><input type="text" name="image_desc_fr[]" class="form-control">';
+}
+
 $(document).ready(() => {
     setTimeout(() => {
         $('.successMsg, .warningMsg').fadeOut('fast');
