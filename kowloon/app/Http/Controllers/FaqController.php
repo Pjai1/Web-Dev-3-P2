@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use App\Faq;
+use LaravelLocalization;
 
 class FaqController extends Controller
 {
@@ -21,7 +22,7 @@ class FaqController extends Controller
 
                 $faqs = Faq::where(function($q) use ($splitStr) {
                     foreach ($splitStr as $key => $string) {
-                        $q->orWhere('question', 'like', '%'.$string.'%')->orWhere('answer', 'like', '%'.$string.'%');
+                        $q->orWhere(LaravelLocalization::getCurrentLocale().'_question', 'like', '%'.$string.'%')->orWhere(LaravelLocalization::getCurrentLocale().'_answer', 'like', '%'.$string.'%');
                     }
                 })->paginate(3);
             }

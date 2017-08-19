@@ -47,11 +47,11 @@
             </div>
             <div class="divider"></div>
             <div class="category-icons">
-                <a href="#"><i class="icon dog-icon {{Request::is('*/category/1*') ? 'active-icon': ''}}"></i></a>
-                <a href="#"><i class="icon cat-icon"></i></a>
-                <a href="#"><i class="icon fish-icon"></i></a>
-                <a href="#"><i class="icon bird-icon"></i></a>
-                <a href="#"><i class="icon animal-icon"></i></a>
+                <a href="/category/1"><i class="icon dog-icon {{$_SERVER['REQUEST_URI'] == '/category/1' ? 'active-icon': ''}}"></i></a>
+                <a href="/category/2"><i class="icon cat-icon {{$_SERVER['REQUEST_URI'] == '/category/2' ? 'active-icon': ''}}"></i></a>
+                <a href="/category/3"><i class="icon fish-icon {{$_SERVER['REQUEST_URI'] == '/category/3' ? 'active-icon': ''}}"></i></a>
+                <a href="/category/4"><i class="icon bird-icon {{$_SERVER['REQUEST_URI'] == '/category/4' ? 'active-icon': ''}}"></i></a>
+                <a href="/category/5"><i class="icon animal-icon {{$_SERVER['REQUEST_URI'] == '/category/5' ? 'active-icon': ''}}"></i></a>
             </div>
             <div class="nav-logo">
                 <img src="/img/logo_small.png" />

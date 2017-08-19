@@ -36,8 +36,8 @@
                 @if ($faqs)
                     @foreach ($faqs as $faq)
                         <div class="search-result">
-                            <h3>{{$faq->question}}</h3>
-                            <p class="search-answer">{{$faq->answer}}</p>
+                            <h3>{{$faq-> {LaravelLocalization::getCurrentLocale()."_question"} }}</h3>
+                            <p class="search-answer">{{$faq-> {LaravelLocalization::getCurrentLocale()."_answer"} }}</p>
                         </div>
                     @endforeach
                     {{$faqs->links()}}

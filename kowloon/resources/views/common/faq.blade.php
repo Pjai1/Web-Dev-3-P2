@@ -3,8 +3,8 @@
     @if($faqs->count())
         @foreach ($faqs as $faq)
             <div class="faq">
-                <h3>{{$faq->question}}</h3>
-                <p>{{$faq->answer}}</p>
+                <h3>{{ $faq->{LaravelLocalization::getCurrentLocale()."_question"} }}</h3>
+                <p>{{ $faq->{LaravelLocalization::getCurrentLocale()."_answer"} }}</p>
             </div>
         @endforeach
     @endif

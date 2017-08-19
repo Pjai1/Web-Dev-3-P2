@@ -14,7 +14,7 @@
                     @foreach ($categories as $key => $category)
                     <div class="collection-item">
                         {{ Form::checkbox('categories[]', $category->id, (in_array($category->id, $selectedCategories)) ? true : '') }}
-                        {{ Form::label($category->name) }}
+                        {{ Form::label($category->{LaravelLocalization::getCurrentLocale()."_name"}) }}
                     </div>
                     @endforeach
                 </div>
@@ -60,9 +60,9 @@
                                 <a href="/category/{{$result->category_id}}/product/{{$result->id}}"><img src="/img/{{$result->productImages->first()->image_url}}"></a>
                             </div>
                             <div class="text-result">
-                                <a href="/category/{{$result->category_id}}/product/{{$result->id}}"><h3>{{$result->name}}</h3></a>
+                                <a href="/category/{{$result->category_id}}/product/{{$result->id}}"><h3>{{$result-> {LaravelLocalization::getCurrentLocale()."_name"} }}</h3></a>
                                 <span>€ {{$result->price}}</span>
-                                <p>{{$result->description}}</p>
+                                <p>{{$result-> {LaravelLocalization::getCurrentLocale()."_description"} }}</p>
                                 <p>{{$result->technical_info}}</p>
                                 <a href="/category/{{$result->category->id}}/product/{{$result->id}}"></a>
                             </div>

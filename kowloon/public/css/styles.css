@@ -42,6 +42,31 @@ ol {
     width: 95%;
 }
 
+/* ADMIN PAGES */
+.admin-nav {
+    font-size: 20px;
+    text-align: right;
+    z-index: 100;
+    background-color: black;
+    position: absolute;
+    left: 5%;
+}
+
+.admin-nav a {
+    color: white;
+}
+
+.admin-nav a:nth-child(1) {
+    padding-right: 5px;
+    border-right: 2px solid;
+}
+
+.admin-tab {
+    width: 100%;
+    margin-top: 30px;
+    padding: 30px 40px;
+}
+
 /* WELCOME PAGE STYLING */
 .intro-logo {
     width: 40%;

@@ -15,13 +15,13 @@ class HotItemsTableSeeder extends Seeder
             'product_id' => 1,
         ]);
         DB::table('hot_items')->insert([
-            'product_id' => 2,
-        ]);
-        DB::table('hot_items')->insert([
             'product_id' => 3,
         ]);
         DB::table('hot_items')->insert([
-            'product_id' => 4,
+            'product_id' => 5,
+        ]);
+        DB::table('hot_items')->insert([
+            'product_id' => 7,
         ]);
     }
 }

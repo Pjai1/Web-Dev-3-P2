@@ -8,6 +8,7 @@ use App\Repositories\CarouselImageRepository;
 use App\Repositories\CategoriesRepository;
 use App\Repositories\CollectionsRepository;
 use App\Repositories\ProductsRepository;
+use LaravelLocalization;
 
 class CategoryController extends Controller
 {
@@ -29,7 +30,7 @@ class CategoryController extends Controller
         $carousel = $this->carousel->getAll();
         $categories = $this->categories->getById($id);
         $collections = $this->collections->getAll();
-        $products = $this->products->getByCategory($id);
+        $query = $this->products->getByCategory($id);
         $minimumPrice = 0;
         $maximumPrice = 0; 
         $sortBy = '';
@@ -38,9 +39,10 @@ class CategoryController extends Controller
 
         if($request->collections) {
             $selectedCollections = $request->collections;
+            // dd($selectedCollections);
 
             foreach($selectedCollections as $key => $collectionId) {
-                $products->whereHas('collections', function($q) use ($collectionId) {
+                $query->whereHas('collections', function($q) use ($collectionId) {
                     $q->where('collection_id', $collectionId);
                 });
             }
@@ -76,9 +78,10 @@ class CategoryController extends Controller
             $minimumPrice = $request->query('minprice');
             $maximumPrice = $request->query('maxprice');
 
-            $products = $this->products->getByPriceAndSort($minimumPrice, $maximumPrice, $sortBy, $sortOrder);
+            $products = $query->whereBetween('price', [$minimumPrice, $maximumPrice])->orderBy($sortBy, $sortOrder)->paginate($productsPerPage);
+
         } else {
-            $allProducts = $products->get();
+            $allProducts = $this->products->getAll();
 
             if($allProducts->count()) {
                 $lowestPricedProduct = $allProducts->sortBy('price')->first();
@@ -87,7 +90,8 @@ class CategoryController extends Controller
                 $minimumPrice = $lowestPricedProduct->price;
                 $maximumPrice = $highestPricedProduct->price;
             }
-            $products = $products->orderBy($sortBy, $sortOrder)->paginate($productsPerPage);
+
+            $products = $query->orderBy($sortBy, $sortOrder)->paginate($productsPerPage);
         }
 
         foreach (Input::except('page') as $input => $value)

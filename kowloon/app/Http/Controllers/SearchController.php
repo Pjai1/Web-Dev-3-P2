@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Repositories\ProductsRepository;
 use App\Repositories\CategoriesRepository;
+use LaravelLocalization;
 
 class SearchController extends Controller
 {
@@ -53,7 +54,7 @@ class SearchController extends Controller
                     $searchResults = $this->products->getMassRelatedProducts($request->categories, $minPrice, $maxPrice)->where(function($q) use ($splitStr) {
 
                         foreach ($splitStr as $key => $string) {
-                            $q->orWhere('name', 'like', '%'.$string.'%')->orWhere('description', 'like', '%'.$string.'%')->orWhere('technical_info', 'like', '%'.$string.'%');
+                            $q->orWhere(LaravelLocalization::getCurrentLocale().'_name', 'like', '%'.$string.'%')->orWhere(LaravelLocalization::getCurrentLocale().'_description', 'like', '%'.$string.'%')->orWhere('technical_info', 'like', '%'.$string.'%');
                         }
                     })->paginate(3);
                 }
@@ -64,7 +65,7 @@ class SearchController extends Controller
                 $searchResults = $this->products->getProductsByPrice($minPrice, $maxPrice)->where(function($q) use ($splitStr) {
     
                     foreach ($splitStr as $key => $string) {
-                        $q->orWhere('name', 'like', '%'.$string.'%')->orWhere('description', 'like', '%'.$string.'%')->orWhere('technical_info', 'like', '%'.$string.'%');
+                        $q->orWhere(LaravelLocalization::getCurrentLocale().'_name', 'like', '%'.$string.'%')->orWhere(LaravelLocalization::getCurrentLocale().'_description', 'like', '%'.$string.'%')->orWhere('technical_info', 'like', '%'.$string.'%');
                     }
                 })->paginate(3);
             }

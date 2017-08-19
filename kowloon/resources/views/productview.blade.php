@@ -16,8 +16,8 @@
                             @if ($collections)
                                 @foreach ($collections as $collection)
                                     <div class="collection-item">
-                                        <input type="checkbox" name="collections" value="{{$collection->id}}" {{(in_array($collection->id, $selectedCollections) ? 'checked' : '')}}>
-                                        <label>{{$collection->name}}</label>
+                                        <input type="checkbox" name="collections[]" value="{{$collection->id}}" {{(in_array($collection->id, $selectedCollections) ? 'checked' : '')}}>
+                                        <label>{{$collection-> {LaravelLocalization::getCurrentLocale()."_name"} }}</label>
                                     </div>
                                 @endforeach
                             @endif
@@ -28,6 +28,7 @@
                             <span class="price-divider"> - </span>
                             <span class="price">€ <input type="text" name="maxprice" value="{{$maximumPrice}}"></span>
                         </div>
+                        <input type="hidden" value="" name="sort" id="selectSort">
                         <div class="form-group">
                             <input type="submit" value="Filter" class="button">
                         </div>
@@ -35,7 +36,7 @@
                 </div>
                 <hr>
                 <div class="category-text-right">
-                    <span class="text-right">{{$category->name}}:</span>
+                    <span class="text-right">{{$category-> {LaravelLocalization::getCurrentLocale()."_name"} }}:</span>
                     <span>{{$products->count()}} of {{$products->total()}}</span>
                 </div>
                 <div class="dropdown sort-dropdown">
@@ -68,7 +69,7 @@
                                     </div>
                                 </a>
                                 <div class="hot-item-desc">
-                                     <span>{{$product->name}}</span>
+                                     <span>{{$product-> {LaravelLocalization::getCurrentLocale()."_name"} }}</span>
                                      <span>€ {{$product->price}}</span>
                                 </div>  
                             </div>

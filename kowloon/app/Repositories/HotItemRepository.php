@@ -15,4 +15,9 @@ class HotItemRepository
     {
         return HotItem::all();
     }
+
+    public function getById($id)
+    {
+        return HotItem::find($id);
+    }
 }

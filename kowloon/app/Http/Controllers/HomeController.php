@@ -7,7 +7,6 @@ use App\Repositories\CarouselImageRepository;
 use App\Repositories\CategoriesRepository;
 use App\Repositories\HotItemRepository;
 use Session;
-use LaravelLocalization;
 
 class HomeController extends Controller
 {

@@ -13,7 +13,7 @@
 
 Route::get('/', 'WelcomeController@index');
 
-// Auth::routes();
+Auth::routes();
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect']], function() {
     //HOME
@@ -38,4 +38,20 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
 
     //SHARED
     Route::post('/subscribe', 'SubscriberController@store');
+});
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('admin/dashboard', 'AdminController@index');
+    Route::get('admin/products', 'ProductController@index');
+    Route::post('admin/products/create', 'ProductController@store');
+    Route::get('admin/products/{id}', 'ProductController@show');
+    Route::get('admin/products/{id}/edit', 'ProductController@edit');
+    Route::post('admin/products/{id}/edit', 'ProductController@update');
+    Route::post('admin/products/{id}/delete', 'ProductController@destroy');
+    Route::get('admin/questions', 'QuestionController@index');
+    Route::post('admin/questions/create', 'QuestionController@store');
+    Route::post('admin/questions/{id}/edit', 'QuestionController@update');
+    Route::get('admin/questions/{id}', 'QuestionController@show');
+    Route::get('admin/questions/{id}/edit', 'QuestionController@edit');
+    Route::post('admin/questions/{id}/delete', 'QuestionController@destroy');
 });

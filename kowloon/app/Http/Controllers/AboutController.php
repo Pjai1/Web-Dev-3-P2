@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\ContactMessage;
 use App\Repositories\FaqRepository;
 use Session;
+// use LaravelLocalization;
 
 class AboutController extends Controller
 {
@@ -17,7 +18,7 @@ class AboutController extends Controller
 
     public function index() {
         $faqs = $this->faqs->getAll();
-
+        
         return view('about', [
             'faqs' => $faqs
         ]);
