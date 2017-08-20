@@ -35,10 +35,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
 
     //SEARCH
     Route::get('/search', 'SearchController@index');
-
-    //SHARED
-    Route::post('/subscribe', 'SubscriberController@store');
 });
+
+//SHARED
+Route::post('/subscribe', 'SubscriberController@store');
 
 Route::group(['middleware' => 'auth'], function() {
     //HOTITEMS
